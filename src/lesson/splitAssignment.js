@@ -16,10 +16,15 @@
 function arrayFn(arg) {
   return ['jQuery', 'Vue', arg];
 }
+const [lang, soft, assignment] = arrayFn(1);
+
+console.log(assignment);
+
+
 
 // 問題 2
-function objectFn() {
-  console.log();
+function objectFn({ name }) {
+  console.log(name);
 }
 
 const argObject = {

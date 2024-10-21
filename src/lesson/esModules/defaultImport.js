@@ -13,3 +13,7 @@
 
 // 練習問題
 // 問題 2
+
+import defaultFn from './defaultExport.js';
+
+console.log(defaultFn());
