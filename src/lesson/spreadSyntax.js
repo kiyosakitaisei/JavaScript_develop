@@ -40,14 +40,6 @@ const objectA = {
   version: 2,
 };
 
-const objectB = {
-  version: 3,
-};
-
-const objectC = {
-  routingLibrary: 'Vue Router',
-};
-
-const objectNEW = { ...objectA, ...objectB,...objectC };
+const objectNEW = { ...objectA, version: 3,routingLibrary: 'Vue Router' };
 
 console.log(objectNEW);

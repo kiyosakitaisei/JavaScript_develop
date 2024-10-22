@@ -16,3 +16,10 @@ const arrowFn = num => num * 10;
 const testFn = name => `Gizumo ${name}`;
 
 console.log(testFn('taro'));
+
+
+
+// age
+const ageFn = age => `${age}`;
+
+console.log(ageFn('20'));

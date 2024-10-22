@@ -78,6 +78,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // API通信が失敗した時の処理
 
     //const fruit = "apple";
+    
     // switch (fruit) {
     //   case "banana":
     //     console.log("バナナです");
