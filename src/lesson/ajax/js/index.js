@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // formタグを取得（プロパティアクセス）
   const formElement = document.forms['search-form'];
 
-
 // 対象の要素.addEventListener('イベントの種類', イベント発生後に実行する関数, オプション);
 // submit：フォームが送信されるときに発生。ユーザーが送信ボタンをクリック、Enterキーを押すと発火。
   formElement.addEventListener('submit', (event) => {
@@ -21,7 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // イベントが発生した際にそのデフォルトの動作をキャンセルする重要なメソッド
     // ユーザー体験の向上: ユーザーがフォームを送信した後にページがリロードされないことで、よりスムーズな体験が提供できます。
     event.preventDefault();
-
 
     // document.getElementById()：引数に渡したidを持つ要素を取得することができる
     const characterElement = document.getElementById('character');
@@ -48,9 +46,9 @@ window.addEventListener('DOMContentLoaded', () => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${pictureBookId}`).then(({ data }) => {
   
 
-      // ポケモンの画像url
-      // ポケモンの公式アートワークのURLを取得するためのもの
-      // 〜の中の〜の中の〜「front_default」
+    // ポケモンの画像url
+    // ポケモンの公式アートワークのURLを取得するためのもの
+    // 〜の中の〜の中の〜「front_default」
   const imgPath = data.sprites.other['official-artwork'].front_default;
   // 日本語訳のリクエスト先url
   // ポケモンの種に関する詳細情報を取得するためのURLを抽出するためのもの
@@ -59,23 +57,38 @@ window.addEventListener('DOMContentLoaded', () => {
   // ポケモンの種に関する情報を取得し、そのデータを使って処理を行うためのもの
   axios.get(jaRequestUrl).then(({ data }) => {
   // ポケモン名の日本語訳
-  // characterName、data.names[0].name;：ポケモンの名前が格納される
+  // characterName：ポケモンの名前が格納される
   const characterName = data.names[0].name;
     //取得したポケモンの情報をもとに表示するHTML要素を作成
   const imgElement = `<img src="${imgPath}" width="475" height="475" alt="" class="character__img">`;
   const nameElement = `<p class="character__name">${characterName}</p>`;
+
+  // ポケモンの画像と名前を組み合わせたHTMLを生成
   const fragment = createElements(imgElement + nameElement);
     // 作成したHTML要素をDOMに反映
+    // appendChild：指定した要素を親要素の最後に追加するメソッド
     characterElement.appendChild(fragment);
 
   }).catch(() => {
-  
       // リクエストに失敗した場合はエラーメッセージを表示
   formElement.after(createErrorElement('エラーが発生しました。時間をおいて再度お試しください。'));
   });
 
     }).catch(error => {
-      // API通信が失敗した時の処理
+    // API通信が失敗した時の処理
+
+    //const fruit = "apple";
+    // switch (fruit) {
+    //   case "banana":
+    //     console.log("バナナです");
+    //     break;
+    //   case "apple":
+    //   case "orange":
+    //     console.log("リンゴまたはオレンジです");
+    //     break;
+    //   default:
+    //     console.log("他の果物です");
+    // }
 
       switch (error.response && error.response.status) {
     case 404:
