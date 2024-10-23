@@ -2,8 +2,10 @@ import 'animate.css';
 
 // ここにコードを書きながら確認しましょう！
 
+// IDから要素を取得
 const title = document.getElementById('title');
 const button = document.getElementById('button');
+// セレクタから要素を取得
 const mocha = document.querySelector('article.card-type--mocha');
 const yellow = document.querySelector('article.card-type--yellow');
 
@@ -20,8 +22,8 @@ button.addEventListener('click', () => {
     setTimeout(() => {
       title.classList.remove('animate__hinge');
       mocha.classList.add('card-animation');
-      yellow.classList.add('animate__fadeInUp');
       yellow.style.display = '';
+      yellow.classList.add('animate__fadeInUp');
     }, 2000);
 });
 

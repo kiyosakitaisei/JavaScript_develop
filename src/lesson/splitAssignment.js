@@ -23,6 +23,7 @@ console.log(assignment);
 
 
 // 問題 2
+// オブジェクトの中のオブジェクトのキーに{}で分割代入
 function objectFn({ name }) {
   console.log(name);
 }

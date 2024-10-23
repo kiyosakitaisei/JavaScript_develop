@@ -27,6 +27,12 @@ const array = [
 
 
 
-const newArray = array.map(val => ({ ...val, className: 'c-' + val.className}));
+// const newArray = array.map(val => ({ ...val, className: 'c-' + val.className}));
+
+const newArray = array.map(val => {
+  console.log(val);
+  return{ ...val, className: 'c-' + val.className};
+});
 
 console.log(newArray);
+

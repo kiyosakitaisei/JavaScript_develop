@@ -12,6 +12,7 @@ argFn();
 
 // 練習問題
 // 問題 1
+// 引数 = デフォルト値　「= 5」がデフォルトの設定
 function discountRateCalc(price, rate = 5) {
   return price * (1 - rate * 0.01);
 }
