@@ -39,9 +39,8 @@ window.addEventListener('DOMContentLoaded', () => {
       axios.get(imgRequestUrl).then(({ data }) => {
         const imgPath = data.sprites.other['official-artwork'].front_default;
 
-        // 口答レビュー課題
-        console.log(axios);// ƒ wrap() {return fn.apply(thisArg, arguments);}
-        console.log(axios.get);// ƒ wrap() {return fn.apply(thisArg, arguments);}
+        // // 口答レビュー課題
+        console.log(axios.get(imgRequestUrl));// promise オブジェクト型
         console.log(data); // オブジェクト型
         console.log(data.sprites); // オブジェクト型
         console.log(data.sprites.other['official-artwork']); // オブジェクト型
@@ -50,7 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 
         // 3. ポケモン名の日本語訳を取得するためのリクエスト
         // jaRequestUrlにそのURLを格納
-        const jaRequestUrl = data.species.url;
+        const jaRequestUrl = data.species.url;  
         // リクエスト③(言語情報)
         // ポケモンの種に関する情報を取得し、そのデータを使って処理を行うためのもの
         axios.get(jaRequestUrl).then(({ data }) => {
