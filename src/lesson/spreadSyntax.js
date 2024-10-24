@@ -3,7 +3,10 @@
 
 
 
+const numbers = [1, 2, 3, 4, 5];
 
+console.log(numbers); // [1, 2, 3, 4, 5]
+console.log(...numbers); // 1 2 3 4 5
 
 
 
@@ -17,9 +20,18 @@ const packageManager = ['npm', 'yarn', 'pnpm'];
 
 function arrayFn(array) {
   const framework = ['Vue', 'React', 'Svelte'];
+  return [...array,...framework];
 }
 
 console.log(arrayFn(packageManager));
+
+
+
+
+
+
+
+
 
 // 問題 2
 const objectA = {
@@ -28,8 +40,6 @@ const objectA = {
   version: 2,
 };
 
-const objectB = {
-  version: 3,
-};
+const objectNEW = { ...objectA, version: 3,routingLibrary: 'Vue Router' };
 
-console.log();
+console.log(objectNEW);

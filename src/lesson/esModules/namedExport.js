@@ -6,11 +6,6 @@
 
 
 
-
-
-
-
-
 // 練習問題
 // 問題 1
 const nameFn = () => {
@@ -20,3 +15,7 @@ const nameFn = () => {
 const calcFn = (num) => {
   return num * 10;
 };
+
+
+export { nameFn, calcFn } ;
+
